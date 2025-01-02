@@ -5,7 +5,7 @@ import { useProducts } from "../ProductContext";
 
 const ProductList = () => {
   const { products, loading, error } = useProducts();
-  if (loading) return <div>Loading...</div>;
+  if (loading) return <div className="text-center mt-6">Loading...</div>;
   if (error) return <div>{error}</div>;
 
   return (
