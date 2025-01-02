@@ -30,7 +30,7 @@ export default function CartItem() {
         {
           headers: {
             "Content-Type": "application/json",
-            Authorization: `Basic Y2tfY2RlZjhkNzEyZjQ2OWU0MDEyMTA4NGRkY2Q3NTBiNzhjOGIyNTQ3Nzpjc182NzdhMGIyZGVhYTFhMjJiZDk2NGUwY2Y1MWQ1ODEzZWY0Yjk0ODQ4`, // Replace with your Basic Auth token
+            Authorization: `Basic ${import.meta.env.VITE_BASIC_AUTH_TOKEN}`,
           },
         }
       );

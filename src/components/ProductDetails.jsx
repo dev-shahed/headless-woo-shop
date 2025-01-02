@@ -20,8 +20,6 @@ const ProductDetails = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
 
-
-
   const [cartLoading, setCartLoading] = useState(false);
   const { addToCart } = useProducts();
 
@@ -49,8 +47,8 @@ const ProductDetails = () => {
     axios
       .get(`http://localhost:10003/wp-json/wc/v3/products/${productId}`, {
         params: {
-          consumer_key: "ck_cdef8d712f469e40121084ddcd750b78c8b25477",
-          consumer_secret: "cs_677a0b2deaa1a22bd964e0cf51d5813ef4b94848",
+          consumer_key: import.meta.env.VITE_CONSUMER_KEY,
+          consumer_secret: import.meta.env.VITE_CONSUMER_SECRET,
         },
       })
       .then((response) => {
@@ -302,7 +300,7 @@ const ProductDetails = () => {
             </div>
           </div>
         </div>
-        <RelatedProducts theProduct = {product}/>
+        <RelatedProducts theProduct={product} />
       </main>
     </Fragment>
   );
